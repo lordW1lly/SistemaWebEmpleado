@@ -100,6 +100,15 @@ namespace SistemaWebEmpleado.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpGet("/empleado/Details/{id}")]
+        //GET:
+        public IActionResult Details(int id)
+        {
+            Empleado empleado = _context.empleados.Find(id);
+
+            return View(empleado);
+        }
+
     } 
 
 }
