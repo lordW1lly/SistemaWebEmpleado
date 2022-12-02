@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
+using System.Text.RegularExpressions;
 
 namespace SistemaWebEmpleado.Validations
 {
@@ -10,24 +8,33 @@ namespace SistemaWebEmpleado.Validations
     {
         public CheckLegajo()
         {
-            ErrorMessage = "El formato debe ser de la forma : AA11111";
+            ErrorMessage = "El legajo comienza con dos letras “AA” y luego 5 números.";
         }
-
         public override bool IsValid(object value)
         {
-            string legajo = Convert.ToString(value);
+            string check = value as string;
 
-           
-            legajo.Replace(" ", "");
-
-            
-            if (legajo.Substring(0, 2) == "AA" && int.TryParse(legajo.Replace("AA", ""), out int numLegajo) && legajo.Replace("AA", "").Length == 5)
+            if (value == null)
             {
-                // Comienza con AA y el resto son números
-                return true;
+                return false;
+            }
+            else
+
+            if (check.Length != 7)
+            {
+                return false;
             }
             else
             {
+                if (check[0] == 'A' && check[1] == 'A')
+                {
+                    string resultString = Regex.Match(check, @"\d+").Value;
+                    if (resultString.Length == 5)
+                    {
+                        return true;
+                    }
+                }
+
                 return false;
             }
         }
