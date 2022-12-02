@@ -1,0 +1,33 @@
+﻿body {
+}
+
+header {
+    display: flex;
+    background-color:aqua;
+    height:200px;
+    
+    justify-content: center;
+  
+    color:aliceblue;
+    font-size: 36px
+
+}
+
+.nav {
+    display: flex;
+    align-items: flex-end;
+    background-color: olivedrab;
+    height: 50px;
+   // align-content: center;
+    justify-content:flex-end;
+    //justify-items: center;
+    //justify-self: center
+}
+
+footer {
+    display:flex;
+    background-color: aqua;
+    justify-content: center;
+    color: aliceblue;
+}
+
