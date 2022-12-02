@@ -36,9 +36,11 @@
     @*<td>@Html.ActionLink("Details", "Details", new { id = item.Id })</td>*@
    @* <td>@Html.ActionLink("Delete", "Delete", new { id = item.Id }) </td>*@
 <td>
-    <a asp-action="ListaPorTitulo" asp-route-id="@item.Titulo">Titulo</a>
-    @* <a asp-action="Delete" asp-route-id="@item.PersonId">Delete</a>
-    <a asp-action="Create" asp-controller="Person">New Person</a>*@
+                <a asp-action="ListaPorTitulo" asp-route-id="@item.Titulo">Titulo</a>
+                <a asp-action="Delete" asp-route-id="@item.Id">Borrar</a>
+                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+             
+           
 </td>
 </tr>
 
